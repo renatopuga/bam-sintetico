@@ -34,12 +34,12 @@ Se você prepara o ambiente ou ministra a aula, consulte primeiro a [preparaçã
 
 | Arquivo | Finalidade |
 |---|---|
-| `output/00_control_reference.grch38.bam` | Controle negativo, CN = 2 e sem variantes sintéticas |
-| `output/00_all_scenarios.grch38.bam` | Casos 01–08 reunidos em uma única track |
+| `Google Drive 00_control_reference.grch38.bam` | Controle negativo, CN = 2 e sem variantes sintéticas |
+| `Google Drive 00_all_scenarios.grch38.bam` | Casos 01–08 reunidos em uma única track |
 | `output/01_*.bam` a `output/08_*.bam` | BAM individual de cada cenário |
 | `output/expected_variants.grch38.vcf` | Variantes e genótipos esperados nos casos 01–08 |
 | `output/gene_windows.grch38.bed` | Janelas simuladas |
-| `output/09_chr7_copy_neutral_LOH.*` | BAM, BAF, ROH, VCF e validação do CN-LOH |
+| `Google Drive 09_chr7_copy_neutral_LOH.*` | BAM, BAF, ROH, VCF e validação do CN-LOH |
 | `output/manifest.tsv` | Relação completa entre arquivos, variantes e evidências |
 
 Consulte a [referência de cenários e arquivos](docs/06_REFERENCIA_ARQUIVOS.md) para coordenadas e detalhes de cada BAM. Para extensões aceitas pelo IGV, veja [formatos do IGV](docs/07_FORMATOS_IGV.md).
