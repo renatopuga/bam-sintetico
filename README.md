@@ -1,4 +1,4 @@
-# bam-sintetico
+# BAM sintético
 BAM sintético com variantes hg38 - CBGM2026
 
 | Categoria                | Formato/extensão                                                      | Descrição                                                                                                                                                                 | Arquivo auxiliar/índice                                                              |
