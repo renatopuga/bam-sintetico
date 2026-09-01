@@ -38,7 +38,7 @@ Tempo sugerido: **75–90 minutos**.
 
 ## Bloco 1 — controle e navegação
 
-1. Carregue `output/00_control_reference.grch38.bam`.
+1. Carregue `Google Drive 00_control_reference.grch38.bam`.
 2. Carregue `output/expected_variants.grch38.vcf`.
 3. Navegue para `chr13:32319050-32319110`.
 4. Ative **View as pairs**.
