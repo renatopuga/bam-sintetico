@@ -3,7 +3,7 @@
 Conjunto de BAMs sintéticos para **treinamento em interpretação de variantes no IGV**. Os exemplos reproduzem sinais visuais de SNVs, alelos complexos, deleções, variantes em cis/trans e duplicação.
 
 > [!CAUTION]
-> **Uso exclusivamente educacional.** Estes arquivos não devem ser usados para validação clínica, homologação de pipelines ou avaliação de desempenho diagnóstico.
+> **Uso exclusivamente educacional.** 
 
 ## Visão geral em 30 segundos
 
