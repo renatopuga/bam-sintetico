@@ -3,7 +3,7 @@
 Conjunto de BAMs sintéticos para **treinamento em interpretação de variantes no IGV**. Os exemplos reproduzem sinais visuais de SNVs, alelos complexos, deleções, variantes em cis/trans e duplicação.
 
 > [!CAUTION]
-> **Uso exclusivamente educacional.** 
+> **Uso exclusivamente educacional.**
 
 ## Visão geral em 30 segundos
 
@@ -15,6 +15,13 @@ Conjunto de BAMs sintéticos para **treinamento em interpretação de variantes 
 - Reprodutibilidade: todos os arquivos podem ser recriados com `generate_bams.py`.
 
 O caso de BTD é apresentado em dois BAMs — um em **cis** e outro em **trans** — por isso há oito BAMs individuais distribuídos em sete janelas gênicas.
+
+## Download 
+
+> [!TIP]
+> [BAMs no Google Drive](https://drive.google.com/drive/folders/1sbXhIkcIHAKPLDYidC0eNIGgh8qrQbuX?usp=sharing)
+
+
 
 ## Glossário rápido
 
@@ -29,7 +36,7 @@ O caso de BTD é apresentado em dois BAMs — um em **cis** e outro em **trans**
 | **Soft-clip** | Trecho do read que foi sequenciado, mas não alinhou naquele local |
 | **Read split** | Read representado em mais de um alinhamento, útil para indicar uma junção estrutural |
 
-## O que este material permite observar
+## O que podemos observar
 
 | Cenário | Gene | O que procurar no IGV |
 |---|---|---|
@@ -72,7 +79,8 @@ Cada janela cobre continuamente o gene envolvido — éxons e íntrons — com a
 | Deleção de 214 bp em KLC2 e flanco | `chr11:66,256,087-66,268,860` |
 | Duplicação tandem em LAMA2 | `chr6:128,882,138-129,517,566` |
 
-As coordenadas exatas usadas na simulação também estão em `output/gene_windows.grch38.bed`.
+> [!NOTE]  
+> As coordenadas exatas usadas na simulação também estão em `output/gene_windows.grch38.bed`.
 
 ## Dois exemplos para integrar cobertura e fração alélica
 
@@ -99,6 +107,7 @@ Arquivos auxiliares:
 - `output/08_LAMA2_duplication_BAF.tsv` — alelos REF/ALT, contagens, profundidade e BAF;
 - `output/08_LAMA2_duplication_BAF.bedgraph` — BAF por posição, pronto para carregar no IGV.
 
+> [!NOTE]  
 > Neste projeto, **BAF** é calculado como `ALT_COUNT / (REF_COUNT + ALT_COUNT)`. O valor não é dobrado para o intervalo de 0 a 0,5.
 
 ## Arquivos principais
@@ -121,7 +130,8 @@ Arquivos auxiliares:
 - dois haplótipos idênticos à referência GRCh38;
 - ausência de SNVs sintéticas, deleções, duplicações, soft-clips intencionais e alinhamentos secundários ou suplementares.
 
-Em KLC2, o controle representa **CN = 2**, sem deleção. Em LAMA2, representa **CN = 2**, sem ganho de cobertura.
+> [!NOTE]  
+> Em KLC2, o controle representa **CN = 2**, sem deleção. Em LAMA2, representa **CN = 2**, sem ganho de cobertura.
 
 ### BAM combinado
 
@@ -138,7 +148,7 @@ Alguns variant callers aceitam apenas um valor `SM`. Para esses programas, use o
 - Em LAMA2, visualize primeiro toda a região `chr6:129048000-129302500`; depois amplie cada breakpoint.
 - Carregue o arquivo `.bedgraph` de LAMA2 para comparar BAF e profundidade na mesma região.
 
-## Gerar os arquivos novamente
+## Código
 
 ### Requisitos
 
