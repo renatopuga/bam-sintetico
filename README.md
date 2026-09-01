@@ -1,6 +1,24 @@
 # BAM sintético
 BAM sintético com variantes hg38 - CBGM2026
 
+
+# BAM e Eventos
+
+| **bam**                             | **scenario**             | **grch38_variant**                     | **genotype_phase**                  | **source**             | **synthetic_evidence**                                                                           |
+| ----------------------------------- | ------------------------ | -------------------------------------- | ----------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------ |
+| **00_control_reference.grch38.bam** | controle negativo GRCh38 | todas as janelas do BED                | 0\|0 em todos os sítios             | GRCh38                 | um RG/SM; PE150; ~30x; CN=2; sem variantes, indels, soft-clips ou reads suplementares            |
+| **00_all_scenarios.grch38.bam**     | todos os oito cenários   | múltiplos loci                         | preserva genótipos/fase individuais | arquivos 01-08         | BAM combinado com oito RG/SM; recomendado para IGV                                               |
+| **01_SNV_good_BRCA2.bam**           | SNV boa qualidade        | chr13:32319080 T>G                     | 0\|1                                | ClinVar 266991         | BRCA2 completo; PE150; ~30x; MAPQ60; BQ variável                                                 |
+| **02_SNV_low_quality_CYP21A2.bam**  | SNV em região homóloga   | chr6:32038610 A>T                      | 0\|1                                | ClinVar 12183          | CYP21A2 completo; MAPQ0-20 no gene; alinhamentos secundários CYP21A1P                            |
+| **03_complex_MNV_hom_cis_chr8.bam** | alelo complexo/MNV       | chr8:93797350 TG>T + chr8:93797352 C>T | 1\|1 / cis                          | gnomAD r4              | TMEM67 completo; ambos os componentes nos dois haplótipos                                        |
+| **04_small_del_hom_CYP1B1.bam**     | deleção pequena          | chr2:38071278-38071290 del13           | 1\|1                                | ClinVar 282564         | CYP1B1 completo; PE150; CIGAR 13D e soft-clips intencionais                                      |
+| **05_BTD_trans_pair_view.bam**      | variantes em trans       | chr3:15644917 C>T / chr3:15645186 G>C  | 1\|0 / 0\|1                         | ClinVar 2230099 / 1900 | BTD completo; insert N(350,45); pares de fase adicionais e tags HP                               |
+| **06_BTD_cis_pair_view.bam**        | variantes em cis         | chr3:15644857 T>A / chr3:15645186 G>C  | 1\|0 / 1\|0                         | ClinVar 2203317 / 1900 | BTD completo; insert N(350,45); pares de fase adicionais e tags HP                               |
+| **07_deletion_214bp_het.bam**       | deleção heterozigótica   | chr11:66257087-66257300 del214         | 0\|1                                | ClinVar 1684657        | KLC2 completo; SNVs flanqueadores ~50% e SNVs internos hemizigóticos ~100%                       |
+| **08_tandem_dup_251kb_het.bam**     | duplicação tandem        | chr6:129049898-129300892 dup           | 0\|1 assumido                       | ClinVar 543888         | LAMA2 completo; terceira cópia circularizada; SNVs no haplótipo duplicado ~66%; TSV/bedGraph BAF |
+
+# Formatos Aceitos pelo IGV
+
 | Categoria                | Formato/extensão                                                      | Descrição                                                                                                                                                                 | Arquivo auxiliar/índice                                                              |
 | ------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | **Alinhamento**          | **BAM (`.bam`)**                                                      | Formato binário de alinhamentos. Mostra reads, cobertura, pares, qualidade, mismatches, indels e orientação. É o formato recomendado para dados Illumina/WGS/WES/RNA-seq. | **Obrigatório:** `.bam.bai` ou `.bai`. O BAM deve estar ordenado por coordenada.     |
